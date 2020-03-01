@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Menu
+namespace Biblioteca
 {
     public class FinanciamentoDeCasa : Financiamento
     {
@@ -63,6 +65,5 @@ namespace Menu
         {
             return Montante + CalcularValorJuros();
         }
-
     }
 }

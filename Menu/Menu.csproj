@@ -58,10 +58,6 @@
     <Compile Include="Casa.Designer.cs">
       <DependentUpon>Casa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fiador.cs" />
-    <Compile Include="Financiamento.cs" />
-    <Compile Include="FinanciamentoDeCarro.cs" />
-    <Compile Include="FinanciamentoDeCasa.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +70,6 @@
     <Compile Include="Outros.Designer.cs">
       <DependentUpon>Outros.cs</DependentUpon>
     </Compile>
-    <Compile Include="OutrosFinanciamentos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Carro.resx">
@@ -110,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
+      <Project>{101417a2-8d6a-46af-9f94-2dc0e7d4a59d}</Project>
+      <Name>Biblioteca</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

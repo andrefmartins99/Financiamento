@@ -1,32 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Menu
+namespace Biblioteca
 {
-    public class OutrosFinanciamentos : Financiamento
+    public class FinanciamentoDeCarro : Financiamento
     {
-        private decimal _valorAAmortizar;
-
-        public decimal ValorAAmortizar
+        public decimal ComissaoAbertura
         {
             get
             {
-                return _valorAAmortizar;
-            }
-            set
-            {
-                if (value <= Montante)
-                {
-                    _valorAAmortizar = value;
-                }
-                else
-                {
-                    _valorAAmortizar = Montante;
-                }
-
+                return 0.0001m;
             }
         }
 
-        public decimal ComissaoAbertura
+        public decimal ValorResidual
         {
             get
             {
@@ -34,15 +22,7 @@ namespace Menu
             }
         }
 
-        public decimal TaxaAmortizacaoAntecipada
-        {
-            get
-            {
-                return 0.0005m;
-            }
-        }
-
-        public OutrosFinanciamentos(decimal montante, int prazoPagamento, double taxaJurosAnualBruta) : base(montante, prazoPagamento, taxaJurosAnualBruta)
+        public FinanciamentoDeCarro(decimal montante, int prazoPagamento, double taxaJurosAnualBruta) : base(montante, prazoPagamento, taxaJurosAnualBruta)
         {
 
         }
@@ -57,13 +37,12 @@ namespace Menu
         }
 
         /// <summary>
-        /// Calcular o valor a pagar se se pretender amortizar x do montante a financiar
+        /// Calcular valor residual
         /// </summary>
-        /// <param name="ValorAAmortizar">Valor que se pretende amortizar</param>
-        /// <returns>Retorna o valor a pagar se se pretender amortizar x do montante a financiar</returns>
-        public decimal CalcularValorAAmortizarComTaxaAmortizacao(decimal ValorAAmortizar)
+        /// <returns>Retorna o valor do valor residual</returns>
+        public decimal CalcularValorResidual()
         {
-            return ValorAAmortizar + (ValorAAmortizar * TaxaAmortizacaoAntecipada);
+            return Montante * ValorResidual;
         }
 
         /// <summary>
@@ -92,7 +71,7 @@ namespace Menu
         /// <returns>Retorna o valor das prestações mensais</returns>
         public override decimal CalcularPrestacoes()
         {
-            return Montante * Convert.ToDecimal(CalcularCoeficienteFinanciamento());
+            return (Montante - CalcularValorResidual()) * Convert.ToDecimal(CalcularCoeficienteFinanciamento());
         }
 
         /// <summary>
@@ -110,7 +89,7 @@ namespace Menu
         /// <returns>Retorna o valor de juros a pagar</returns>
         public override decimal CalcularValorJuros()
         {
-            return CalcularPrestacoes() * PrazoPagamento - Montante;
+            return CalcularPrestacoes() * PrazoPagamento - Montante + CalcularValorResidual();
         }
 
         /// <summary>

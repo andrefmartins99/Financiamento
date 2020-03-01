@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "Menu\Menu.csproj", 
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FinanciamentoSetup", "FinanciamentoSetup\FinanciamentoSetup.vdproj", "{07C49D49-F265-4070-A455-33ADC3AB4EDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{101417A2-8D6A-46AF-9F94-2DC0E7D4A59D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{F4C64EE2-F57D-47FE-9FCF-D20CF9ADE741}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07C49D49-F265-4070-A455-33ADC3AB4EDE}.Debug|Any CPU.ActiveCfg = Debug
 		{07C49D49-F265-4070-A455-33ADC3AB4EDE}.Release|Any CPU.ActiveCfg = Release
+		{101417A2-8D6A-46AF-9F94-2DC0E7D4A59D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101417A2-8D6A-46AF-9F94-2DC0E7D4A59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101417A2-8D6A-46AF-9F94-2DC0E7D4A59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101417A2-8D6A-46AF-9F94-2DC0E7D4A59D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
