@@ -12,17 +12,19 @@ namespace Menu
 {
     public partial class Carro : Form
     {
-        Menu menu = new Menu();
+        public FinanciamentoDeCarro FinanciamentoDeCarro { get; set; }
 
-        public Carro(Menu Menu)
+        public Menu Menu { get; set; }
+
+        public Carro(Menu menu)
         {
             InitializeComponent();
-            menu = Menu;
+            Menu = menu;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            menu.mudarEstadoButoesParaTrue();
+            Menu.mudarEstadoButoesParaTrue();
             this.Close();
         }
 
@@ -70,20 +72,20 @@ namespace Menu
             int prazo = Convert.ToInt32(txtPrazo.Text);
             double taxa = Convert.ToDouble(txtTaxa.Text);
 
-            FinanciamentoDeCarro financiamentoDeCarro = new FinanciamentoDeCarro(montante, prazo, taxa);
+            FinanciamentoDeCarro = new FinanciamentoDeCarro(montante, prazo, taxa);
 
             //Cálculos
-            txtPrimeiraPrestacao.Text = Math.Round(financiamentoDeCarro.CalcularPrimeiraPrestacao(), 2).ToString() + " €";
-            txtPrestacoes.Text = Math.Round(financiamentoDeCarro.CalcularPrestacoes(), 2).ToString() + " €";
-            txtComissaoAbertura.Text = Math.Round(financiamentoDeCarro.CalcularComissaoAbertura(), 2).ToString() + " €";
-            txtValorJuros.Text = Math.Round(financiamentoDeCarro.CalcularValorJuros(), 2).ToString() + " €";
-            txtTotalComJuros.Text = Math.Round(financiamentoDeCarro.CalcularValorTotal(), 2).ToString() + " €";
-            txtValorResidual.Text = Math.Round(financiamentoDeCarro.CalcularValorResidual(), 2).ToString() + " €";
+            txtPrimeiraPrestacao.Text = Math.Round(FinanciamentoDeCarro.CalcularPrimeiraPrestacao(), 2).ToString() + " €";
+            txtPrestacoes.Text = Math.Round(FinanciamentoDeCarro.CalcularPrestacoes(), 2).ToString() + " €";
+            txtComissaoAbertura.Text = Math.Round(FinanciamentoDeCarro.CalcularComissaoAbertura(), 2).ToString() + " €";
+            txtValorJuros.Text = Math.Round(FinanciamentoDeCarro.CalcularValorJuros(), 2).ToString() + " €";
+            txtTotalComJuros.Text = Math.Round(FinanciamentoDeCarro.CalcularValorTotal(), 2).ToString() + " €";
+            txtValorResidual.Text = Math.Round(FinanciamentoDeCarro.CalcularValorResidual(), 2).ToString() + " €";
         }
 
         private void Carro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            menu.mudarEstadoButoesParaTrue();
+            Menu.mudarEstadoButoesParaTrue();
         }
 
         //Verificar se caracteres inseridos são apenas números

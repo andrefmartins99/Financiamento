@@ -15,32 +15,32 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_60648C85E33E4F69BF8634AFE56B7EB7"
+        "MsmKey" = "8:_36FBD5BA443F4064A72442D33A252508"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8604BF198899DA91BAB5B510D5601F74"
-        "OwnerKey" = "8:_60648C85E33E4F69BF8634AFE56B7EB7"
+        "OwnerKey" = "8:_36FBD5BA443F4064A72442D33A252508"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C4C9EA5FE4474C7492C7BDFE8A3C70F8"
+        "MsmKey" = "8:_E1D54620DED24F4FA4024937FB94D22A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_60648C85E33E4F69BF8634AFE56B7EB7"
+        "OwnerKey" = "8:_8604BF198899DA91BAB5B510D5601F74"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8604BF198899DA91BAB5B510D5601F74"
+        "OwnerKey" = "8:_36FBD5BA443F4064A72442D33A252508"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -169,7 +169,7 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C4C9EA5FE4474C7492C7BDFE8A3C70F8"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E1D54620DED24F4FA4024937FB94D22A"
             {
             "SourcePath" = "8:..\\..\\..\\..\\..\\..\\..\\Downloads\\iconfinder_19_3319625.ico"
             "TargetName" = "8:icon.ico"
@@ -366,7 +366,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_535778A74F0344CA91A5653BE8DAAD41"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8C0637817BB7485F88D3CA8EE31E6BE7"
             {
             "Name" = "8:Financiamento"
             "Arguments" = "8:"
@@ -374,13 +374,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_60648C85E33E4F69BF8634AFE56B7EB7"
+            "Target" = "8:_36FBD5BA443F4064A72442D33A252508"
             "Folder" = "8:_494F580261B54869B9E680A19934F0DE"
             "WorkingFolder" = "8:_85E56802B7CB41608ADEC03994A54E3E"
-            "Icon" = "8:_C4C9EA5FE4474C7492C7BDFE8A3C70F8"
+            "Icon" = "8:_E1D54620DED24F4FA4024937FB94D22A"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BDFE1DB2504448FDB038EC4708A3694A"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E1D9D8E3B93341C9A36BEC9A099BC81E"
             {
             "Name" = "8:Financiamento"
             "Arguments" = "8:"
@@ -388,10 +388,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_60648C85E33E4F69BF8634AFE56B7EB7"
+            "Target" = "8:_36FBD5BA443F4064A72442D33A252508"
             "Folder" = "8:_C1C772D8C4814A4688386B015A146944"
             "WorkingFolder" = "8:_85E56802B7CB41608ADEC03994A54E3E"
-            "Icon" = "8:_C4C9EA5FE4474C7492C7BDFE8A3C70F8"
+            "Icon" = "8:_E1D54620DED24F4FA4024937FB94D22A"
             "Feature" = "8:"
             }
         }
@@ -793,7 +793,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_60648C85E33E4F69BF8634AFE56B7EB7"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_36FBD5BA443F4064A72442D33A252508"
             {
             "SourcePath" = "8:..\\Menu\\obj\\Debug\\Menu.exe"
             "TargetName" = "8:"

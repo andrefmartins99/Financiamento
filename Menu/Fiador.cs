@@ -8,6 +8,10 @@ namespace Menu
 {
     public class Fiador
     {
+        private string _telefone;
+        private string _nif;
+        private decimal _rendimentoAnualBruto;
+
         public string Nome { get; set; }
 
         public string Morada { get; set; }
@@ -16,17 +20,17 @@ namespace Menu
         {
             get
             {
-                return Telefone;
+                return _telefone;
             }
             set
             {
                 if (value.Length == 9)
                 {
-                    Telefone = value;
+                    _telefone = value;
                 }
                 else
                 {
-                    Telefone = string.Empty;
+                    _telefone = "111111111";
                 }
             }
         }
@@ -35,17 +39,17 @@ namespace Menu
         {
             get
             {
-                return NIF;
+                return _nif;
             }
             set
             {
                 if (value.Length == 9)
                 {
-                    NIF = value;
+                    _nif = value;
                 }
                 else
                 {
-                    NIF = string.Empty;
+                    _nif = "111111111";
                 }
             }
         }
@@ -54,19 +58,28 @@ namespace Menu
         {
             get
             {
-                return RendimentoAnualBruto;
+                return _rendimentoAnualBruto;
             }
             set
             {
                 if (value > 0)
                 {
-                    RendimentoAnualBruto = value;
+                    _rendimentoAnualBruto = value;
                 }
                 else
                 {
-                    RendimentoAnualBruto = 1;
+                    _rendimentoAnualBruto = 1;
                 }
             }
+        }
+
+        public Fiador(string nome, string morada, string telefone, string nif, decimal rendimentoAnualBruto)
+        {
+            Nome = nome;
+            Morada = morada;
+            Telefone = telefone;
+            NIF = nif;
+            RendimentoAnualBruto = rendimentoAnualBruto;
         }
     }
 }

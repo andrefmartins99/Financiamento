@@ -12,22 +12,24 @@ namespace Menu
 {
     public partial class Outros : Form
     {
-        Menu menu = new Menu();
+        public OutrosFinanciamentos OutrosFinanciamentos { get; set; }
 
-        public Outros(Menu Menu)
+        public Menu Menu { get; set; }
+
+        public Outros(Menu menu)
         {
             InitializeComponent();
-            menu = Menu;
+            Menu = menu;
         }
 
         private void Outros_FormClosing(object sender, FormClosingEventArgs e)
         {
-            menu.mudarEstadoButoesParaTrue();
+            Menu.mudarEstadoButoesParaTrue();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            menu.mudarEstadoButoesParaTrue();
+            Menu.mudarEstadoButoesParaTrue();
             this.Close();
         }
 
@@ -56,14 +58,14 @@ namespace Menu
             int prazo = Convert.ToInt32(txtPrazo.Text);
             double taxa = Convert.ToDouble(txtTaxa.Text);
 
-            OutrosFinanciamentos outrosFinanciamentos = new OutrosFinanciamentos(montante, prazo, taxa);
+            OutrosFinanciamentos = new OutrosFinanciamentos(montante, prazo, taxa);
 
             //Cálculos
-            txtPrimeiraPrestacao.Text = Math.Round(outrosFinanciamentos.CalcularPrimeiraPrestacao(), 2).ToString() + " €";
-            txtPrestacoes.Text = Math.Round(outrosFinanciamentos.CalcularPrestacoes(), 2).ToString() + " €";
-            txtComissaoAbertura.Text = Math.Round(outrosFinanciamentos.CalcularComissaoAbertura(), 2).ToString() + " €";
-            txtValorJuros.Text = Math.Round(outrosFinanciamentos.CalcularValorJuros(), 2).ToString() + " €";
-            txtTotalComJuros.Text = Math.Round(outrosFinanciamentos.CalcularValorTotal(), 2).ToString() + " €";
+            txtPrimeiraPrestacao.Text = Math.Round(OutrosFinanciamentos.CalcularPrimeiraPrestacao(), 2).ToString() + " €";
+            txtPrestacoes.Text = Math.Round(OutrosFinanciamentos.CalcularPrestacoes(), 2).ToString() + " €";
+            txtComissaoAbertura.Text = Math.Round(OutrosFinanciamentos.CalcularComissaoAbertura(), 2).ToString() + " €";
+            txtValorJuros.Text = Math.Round(OutrosFinanciamentos.CalcularValorJuros(), 2).ToString() + " €";
+            txtTotalComJuros.Text = Math.Round(OutrosFinanciamentos.CalcularValorTotal(), 2).ToString() + " €";
 
             btnAmortizar.Enabled = true;
             txtValorAAmortizar.Enabled = true;
@@ -85,15 +87,10 @@ namespace Menu
                 return;
             }
 
-            decimal montante = Convert.ToDecimal(txtMontante.Text);
-            int prazo = Convert.ToInt32(txtPrazo.Text);
-            double taxa = Convert.ToDouble(txtTaxa.Text);
             decimal valorAAmortizar = Convert.ToDecimal(txtValorAAmortizar.Text);
 
-            OutrosFinanciamentos outrosFinanciamentos = new OutrosFinanciamentos(montante, prazo, taxa);
-
             //Cálculos
-            MessageBox.Show($"Para amortizar {txtValorAAmortizar.Text} € do montante pedido deve pagar {Math.Round(outrosFinanciamentos.CalcularValorAAmortizarComTaxaAmortizacao(valorAAmortizar), 2)} €.", "Amortizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Para amortizar {txtValorAAmortizar.Text} € do montante pedido deve pagar {Math.Round(OutrosFinanciamentos.CalcularValorAAmortizarComTaxaAmortizacao(valorAAmortizar), 2)} €.", "Amortizar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //Verificar se caracteres inseridos são apenas números

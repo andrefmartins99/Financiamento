@@ -5,6 +5,12 @@ namespace Menu
 {
     public partial class Menu : Form
     {
+        public Carro NovoCarro { get; set; }
+
+        public Casa NovaCasa { get; set; }
+
+        public Outros NovoOutros { get; set; }
+
         public Menu()
         {
             InitializeComponent();
@@ -13,12 +19,14 @@ namespace Menu
         //Abrir form financiamento carro
         private void btnCarro_Click(object sender, EventArgs e)
         {
-            Carro novoCarro = new Carro(this);
-            novoCarro.Show();
+            NovoCarro = new Carro(this);
+            NovoCarro.Show();
             mudarEstadoButoesParaFalse();
         }
 
-        //Mudar estado dos botões, no menu, para false
+        /// <summary>
+        /// Mudar estado dos botões, no menu, para false
+        /// </summary>
         public void mudarEstadoButoesParaFalse()
         {
             btnCarro.Enabled = false;
@@ -27,7 +35,9 @@ namespace Menu
             btnInfo.Enabled = false;
         }
 
-        //Mudar estado dos botões, no menu, para true
+        /// <summary>
+        /// Mudar estado dos botões, no menu, para true
+        /// </summary>
         public void mudarEstadoButoesParaTrue()
         {
             btnCarro.Enabled = true;
@@ -39,23 +49,23 @@ namespace Menu
         //Abrir form financiamento casa
         private void btnCasa_Click(object sender, EventArgs e)
         {
-            Casa novaCasa = new Casa(this);
-            novaCasa.Show();
+            NovaCasa = new Casa(this);
+            NovaCasa.Show();
             mudarEstadoButoesParaFalse();
         }
 
         //Abrir form outros financiamnetos
         private void btnOutros_Click(object sender, EventArgs e)
         {
-            Outros novoOutros = new Outros(this);
-            novoOutros.Show();
+            NovoOutros = new Outros(this);
+            NovoOutros.Show();
             mudarEstadoButoesParaFalse();
         }
 
-        //Versão
+        //Créditos
         private void lblInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Feito por André Martins{Environment.NewLine}Versão 1.3{Environment.NewLine}Data: 15/02/2020", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Feito por André Martins{Environment.NewLine}Versão 1.3{Environment.NewLine}Data: 01/03/2020", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

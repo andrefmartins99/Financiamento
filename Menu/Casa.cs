@@ -12,17 +12,21 @@ namespace Menu
 {
     public partial class Casa : Form
     {
-        Menu menu = new Menu();
+        public FinanciamentoDeCasa FinanciamentoDeCasa { get; set; }
 
-        public Casa(Menu Menu)
+        public Fiador Fiador { get; set; }
+
+        public Menu Menu { get; set; }
+
+        public Casa(Menu menu)
         {
             InitializeComponent();
-            menu = Menu;
+            Menu = menu;
         }
 
         private void Casa_FormClosing(object sender, FormClosingEventArgs e)
         {
-            menu.mudarEstadoButoesParaTrue();
+            Menu.mudarEstadoButoesParaTrue();
         }
 
         //Verificar se caracteres inseridos são apenas números
@@ -125,27 +129,30 @@ namespace Menu
                 return;
             }
 
+            string nome = txtNome.Text;
+            string morada = txtMorada.Text;
+            string telefone = txtTelefone.Text;
+            string nif = txtNIF.Text;
+            decimal rendimento = Convert.ToDecimal(txtRendimento.Text);
+
+            Fiador = new Fiador(nome, morada, telefone, nif, rendimento);
+
             decimal montante = Convert.ToDecimal(txtMontante.Text);
             int prazo = Convert.ToInt32(txtPrazo.Text);
             double taxa = Convert.ToDouble(txtTaxa.Text);
 
-            FinanciamentoDeCasa financiamentoDeCasa = new FinanciamentoDeCasa(montante, prazo, taxa);
+            FinanciamentoDeCasa = new FinanciamentoDeCasa(montante, prazo, taxa);
 
             //Cálculos
-            txtPrestacoes.Text = Math.Round(financiamentoDeCasa.CalcularPrestacoes(), 2).ToString() + " €";
-            txtValorJuros.Text = Math.Round(financiamentoDeCasa.CalcularValorJuros(), 2).ToString() + " €";
-            txtTotalComJuros.Text = Math.Round(financiamentoDeCasa.CalcularValorTotal(), 2).ToString() + " €";
+            txtPrestacoes.Text = Math.Round(FinanciamentoDeCasa.CalcularPrestacoes(), 2).ToString() + " €";
+            txtValorJuros.Text = Math.Round(FinanciamentoDeCasa.CalcularValorJuros(), 2).ToString() + " €";
+            txtTotalComJuros.Text = Math.Round(FinanciamentoDeCasa.CalcularValorTotal(), 2).ToString() + " €";
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            menu.mudarEstadoButoesParaTrue();
+            Menu.mudarEstadoButoesParaTrue();
             this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

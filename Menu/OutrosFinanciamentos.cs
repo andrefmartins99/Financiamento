@@ -47,25 +47,38 @@ namespace Menu
 
         }
 
-        //Calcular comissão de abertura
+        /// <summary>
+        /// Calcular comissão de abertura
+        /// </summary>
+        /// <returns>Retorna o valor da comissão de abertura</returns>
         public decimal CalcularComissaoAbertura()
         {
             return Montante * ComissaoAbertura;
         }
 
-        //Calcular o valor a pagar se se pretender amortizar x do montante a financiar
+        /// <summary>
+        /// Calcular o valor a pagar se se pretender amortizar x do montante a financiar
+        /// </summary>
+        /// <param name="ValorAAmortizar">Valor que se pretende amortizar</param>
+        /// <returns>Retorna o valor a pagar se se pretender amortizar x do montante a financiar</returns>
         public decimal CalcularValorAAmortizarComTaxaAmortizacao(decimal ValorAAmortizar)
         {
             return ValorAAmortizar + (ValorAAmortizar * TaxaAmortizacaoAntecipada);
         }
 
-        //Converter a taxa anual em taxa mensal
+        /// <summary>
+        /// Converter a taxa anual em taxa mensal
+        /// </summary>
+        /// <returns>Retorna o valor da taxa mensal</returns>
         public override double CalcularTaxaMensal()
         {
             return Math.Pow(1 + TaxaJurosAnualBruta, 1 / Convert.ToDouble(12)) - 1;
         }
 
-        //Calcular o coeficiente de financiamento
+        /// <summary>
+        /// Calcular o coeficiente de financiamento
+        /// </summary>
+        /// <returns>Retorna o valor do coeficiente de financiamento</returns>
         public override double CalcularCoeficienteFinanciamento()
         {
             double taxaMensal = CalcularTaxaMensal();
@@ -73,25 +86,37 @@ namespace Menu
             return taxaMensal / (1 - (1 / (Math.Pow(1 + taxaMensal, PrazoPagamento))));
         }
 
-        //Calcular as prestações
+        /// <summary>
+        /// Calcular as prestações mensais
+        /// </summary>
+        /// <returns>Retorna o valor das prestações mensais</returns>
         public override decimal CalcularPrestacoes()
         {
             return Montante * Convert.ToDecimal(CalcularCoeficienteFinanciamento());
         }
 
-        //Calcular o valor da primeira prestação
+        /// <summary>
+        /// Calcular o valor da primeira prestação
+        /// </summary>
+        /// <returns>Retorna o valor da primeira prestações</returns>
         public decimal CalcularPrimeiraPrestacao()
         {
             return CalcularPrestacoes() + CalcularComissaoAbertura();
         }
 
-        //Calcular o valor de juros a pagar
+        /// <summary>
+        /// Calcular o valor de juros a pagar
+        /// </summary>
+        /// <returns>Retorna o valor de juros a pagar</returns>
         public override decimal CalcularValorJuros()
         {
             return CalcularPrestacoes() * PrazoPagamento - Montante;
         }
 
-        //Calcular o valor total a pagar
+        /// <summary>
+        /// Calcular o valor total a pagar
+        /// </summary>
+        /// <returns>Retorna o valor total a pagar</returns>
         public override decimal CalcularValorTotal()
         {
             return Montante + CalcularComissaoAbertura() + CalcularValorJuros();
