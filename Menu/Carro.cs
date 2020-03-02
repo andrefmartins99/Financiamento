@@ -62,6 +62,13 @@ namespace Menu
                 return;
             }
 
+            //Verificar se o prazo de pagamento é igual a 0
+            if (Convert.ToInt32(txtPrazo.Text) == 0)
+            {
+                MessageBox.Show("O valor mínimo para o prazo é 1 mês!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             //Verificar se o prazo de pagamento é menor de 60 meses
             if (Convert.ToInt32(txtPrazo.Text) > 60)
             {
