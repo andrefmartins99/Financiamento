@@ -68,6 +68,7 @@ namespace Menu
             if (Convert.ToInt32(txtPrazo.Text) == 0)
             {
                 MessageBox.Show("O valor mínimo para o prazo é 1 mês!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return;
             }
 
