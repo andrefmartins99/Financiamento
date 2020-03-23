@@ -76,7 +76,6 @@ namespace Menu
             if (Convert.ToInt32(txtPrazo.Text) > 60)
             {
                 MessageBox.Show("O valor máximo para o prazo é 60 meses!!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 return;
             }
 
